@@ -6,6 +6,7 @@ class launcher{
             stiffness: 0.009,
             length: 10
         }
+        his.bodyA=bodyA
         this.pointB = pointB
         this.launcher = Constraint.create(options);
         World.add(world, this.launcher);
@@ -13,10 +14,7 @@ class launcher{
     fly(){
         this.launcher.bodyA = null;
     }
-    attach() {
-
-    }
-
+ attach(bodyA) { this.launcher.bodyA=bodyA; }
     display(){
         if(this.launcher.bodyA){
         var pointA = this.launcher.bodyA.position;
